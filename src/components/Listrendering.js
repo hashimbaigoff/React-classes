@@ -8,7 +8,7 @@ class Listrendering extends React.Component {
             data: [
                 {
                     id: 1,
-                    name: 'Kousar',
+                    name: 'Kousar123',
                     email: 'kousar@gmail.com',
                     Age: 22
                 },
@@ -29,6 +29,12 @@ class Listrendering extends React.Component {
                     name: 'Harsha',
                     email: 'harsha@gmail.com',
                     Age: 22
+                },
+                {
+                    id: 4,
+                    name: 'Harsha1',
+                    email: 'harsha@gmail.com12345',
+                    Age: 22
                 }
             ]
         }
@@ -37,7 +43,7 @@ class Listrendering extends React.Component {
     render() {
         return (
             <div>
-                {this.state.data.map((element) => <Person data={element} />)}
+                {this.state.data.map((element,index) => <Person key={index} data={element} />)}
             </div>
         )
     }
