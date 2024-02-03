@@ -1,30 +1,26 @@
 import React from "react";
 import ChildComponent from './ChildComponent';
 
-class ParentComponent extends React.Component {
+class Parent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: 'nithin'
+        }
+        console.log(this.props);
+    }
+}
+
+class Child extends Parent {
     constructor() {
         super();
-        this.state = {
-            count: 0
-        }
+        console.log(this.state, this.props);
     }
-
-    
-
-    inc = (count) => {
-        console.log(count,"parent");
-        this.setState({
-            count: this.state.count+count
-        })
-    }
-
     render() {
-        return (
-            <div>
-                <ChildComponent count={this.state.count} increment={this.inc} />
-            </div>
+        return(
+            <div>Child {this.props.name}</div>
         )
     }
 }
 
-export default ParentComponent;
+export default Child;

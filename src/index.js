@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import Welcome from './components/welcome';
 import Listrendering from './components/Listrendering';
 import Form from './components/formComponent';
+import Lifecycle from './components/lifeCycle';
+import Child from './components/ParentComponent';
 
 
 
@@ -12,7 +14,7 @@ import Form from './components/formComponent';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-  <Form />
+  <Child name="harsha"/>
   </>
 );
 
