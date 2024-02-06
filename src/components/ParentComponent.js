@@ -2,25 +2,28 @@ import React from "react";
 import ChildComponent from './ChildComponent';
 
 class Parent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: 'nithin'
-        }
-        console.log(this.props);
-    }
-}
-
-class Child extends Parent {
     constructor() {
         super();
-        console.log(this.state, this.props);
+        this.state = {
+            name: 'Taheer'
+        }
+    }
+    change = () => {
+        this.setState({
+            name: this.state.name+'!'  
+        })
     }
     render() {
-        return(
-            <div>Child {this.props.name}</div>
+        console.log("Parent Component");
+        return (
+            <div>
+                <h1>{this.state.name}</h1>
+                <button onClick={this.change}>Change</button>
+                <ChildComponent name={this.state.name}/>
+            </div>
         )
     }
 }
 
-export default Child;
+
+export default Parent;
