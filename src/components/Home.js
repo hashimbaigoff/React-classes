@@ -1,22 +1,13 @@
 import React, { useEffect } from "react";
 import Content from "./Content";
 import Footer from "./footer";
+import Carousal from "./Carousal/carousal";
 
 
 function Home() {
     return (
         <div>
-            <h1>Home page</h1>
-            <>
-                <h1>Heading</h1>
-                <h1>Heading</h1>
-                <h1>Heading</h1>
-                <h1>Heading</h1>
-                <h1>Heading</h1>
-                <h1>Heading</h1>
-            </>
-            <Content />
-            <Footer />
+           <Carousal />
         </div>
     )
 }

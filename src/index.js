@@ -16,6 +16,8 @@ import App from './components/App';
 import Namevalidation from './components/InputValidation';
 import PasswordValid from './components/password';
 import ParentComponent from './components/FunctionalCom';
+import Counter from './components/counter';
+import ErrorBoundary from './components/error-boundary';
 
 
 
@@ -25,7 +27,9 @@ import ParentComponent from './components/FunctionalCom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <App />
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
   </>
 );
 

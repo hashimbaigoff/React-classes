@@ -1,49 +1,14 @@
-import React from "react";
+import { useState } from "react";
 
-
-class Counter extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            count: 0
-        }
-    }
-
-    inc() {
-        this.setState(prevState => ({
-            count: prevState.count + 1
-        }))
-    }
-
-
-    //super() and super(props);
-
-    incrementFiceTimes() {
-        this.inc();  
-        this.inc();  
-        this.inc();
-        this.inc();
-        this.inc();
-        this.inc();
-        this.inc();
-        this.inc();
-        this.inc();
-        this.inc();
-        this.inc();
-        this.inc();
-        this.inc();
-    }
-
-
-    render() {
-        return (
-            <div>
-                <p>count: {this.state.count}</p>
-                <button onClick={() => this.inc()}>+</button>&nbsp;&nbsp;
-                <button onClick={() => this.dec()}>-</button>
-            </div>
-        )
-    }
+function Counter() {
+    const [counter, setCounter] = useState(0)
+    
+    return (
+        <div>
+            <p>Counter:{counter}</p>
+            <button onClick={() => setCounter(counter+1)}>Inc</button>
+        </div>
+    )
 }
 
 export default Counter;
