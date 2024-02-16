@@ -1,0 +1,16 @@
+.header {
+    overflow: hidden;
+}
+
+.header .menu {
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
