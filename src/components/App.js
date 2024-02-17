@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./header";
 import Footer from "./footer";
 import Content from "./Content";
@@ -15,12 +15,16 @@ import BHeader from "./Header/bootstrapHeader";
 import useEffectCom from "./useEffect";
 import FetchRequest from "./fetchAPI";
 import Person from "./Person";
+import useStateA from "./useStateA";
+import useStateO from "./useStateO";
+import fetchAPI from "./fetchAPI";
+import FetchAPI from "./fetchAPI";
 
 function App() {
     return (
         <div>
             <Router >
-                <BHeader />
+                {/* <BHeader /> */}
                 <Routes>
                    <Route path="/" Component={Home} />
                    <Route path="/about" Component={About} />
@@ -31,7 +35,7 @@ function App() {
                    <Route path="/useref" Component={UseRefComp} />
                    <Route path="/test" Component={Person} />
                 </Routes>
-                <Footer />
+                {/* <Footer /> */}
             </Router>
         </div>
     )

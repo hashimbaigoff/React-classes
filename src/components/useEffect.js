@@ -2,18 +2,17 @@ import React, { useEffect, useState } from "react";
 
 function useEffectCom() {
 
-    const [counter, setCounter] = useState(0)
+    const [ counter, setCounter ] = useState(0)
 
-    useEffect(() => {
-        if(counter > 3) {
-            alert("yes it is achieved");
-        }
-    },[counter]);
+   //syntax
+   useEffect(() => {
+    console.log(counter);
+   },[counter]);
 
-    return (
+    return(
         <div>
-            <p>Counter: {counter}</p>
-            <button onClick={() => setCounter(counter+1)} disabled = {counter === 4}>Increment</button>
+            counter: {counter}<br /><br />
+            <button onClick={() => setCounter(counter+1)}>Increment</button>
         </div>
     )
 }

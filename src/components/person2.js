@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import UpdatedComponent from "./HOC";
 
-function Person2() {
-
-    const [money, setMoney] = useState(0);
-    const handleInc = () => {
-        setMoney(money+1);
-    }
-    return (
+function Person2({money, handleInc}) {
+    return(
         <div>
-            <p>Nithin Money: {money}</p>
-            <button onClick={handleInc}>Increment</button>
+            <p>Nithin has money: {money}</p>
+            <button onClick={handleInc}>Increase Money</button>
         </div>
     )
 }
 
-export default Person2;
+export default UpdatedComponent(Person2);

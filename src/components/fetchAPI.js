@@ -1,11 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
+import { useActionData } from "react-router-dom";
 
-function FetchRequest() {
-    const [user, setUser] = useState({});
+function FetchAPI() {
 
-    useEffect(()=>{
-        const API  = "https://api.github.com/users/mohammed786";
-        const handleAPI = async () => {
+    const [user, setUser] = useState({})
+
+    
+
+    useEffect(() => {
+
+        const API = "https://api.github.com/users/mohammed786";
+
+        const handleAPI = async() => {
             try {
                 const response = await fetch(API);
                 const json = await response.json();
@@ -15,17 +21,20 @@ function FetchRequest() {
             }
         }
         handleAPI();
+
     },[]);
-    console.log(user, "user", Object.keys(user).length);
+
+    console.log(user, Object.keys(user));
+
     return (
         <div>
-            {Object.keys(user).length > 0 && Object.keys(user).map((element,index) => {
+            {Object.keys(user).length > 0 && Object.keys(user).map((element, index) => {
                 return (
-                    <p key={index}> {element +" : "+ user[element]}</p>
+                    <div key={index}>{element + " : "+user[element]}</div>
                 )
             })}
         </div>
     )
 }
 
-export default FetchRequest;
+export default FetchAPI;
